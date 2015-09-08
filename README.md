@@ -12,7 +12,7 @@ Create syslog container
 
 Monitor logs:
 
-     docker run --volumes-from syslog -t ubuntu tail -f /var/log/syslog
+     docker run --volumes-from syslog --name syslog-monitor -t ubuntu tail -f /var/log/syslog
 
 
 Run logger client (send message to log from other container):
