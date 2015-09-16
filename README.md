@@ -6,7 +6,7 @@
 Create syslog container
 
      docker buld -t syslog .
-     docker run -d --name syslog --cap-add syslog -v /tmp/syslogdev:/dev syslog
+     docker run -d --name syslog --cap-add syslog -v $(pwd)/log:/var/log -v /tmp/syslogdev:/dev syslog
 
 
 
