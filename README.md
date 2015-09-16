@@ -5,14 +5,13 @@
 
 Create syslog container
 
-     docker buld -t syslog .
-     docker run -d --name syslog --cap-add syslog -v $(pwd)/log:/var/log -v /tmp/syslogdev:/dev syslog
-
+     docker build -t syslog .
+     ./run_syslog.sh
 
 
 Monitor logs:
 
-     docker run --volumes-from syslog -t ubuntu tail -f /var/log/syslog
+     docker exec -ti syslog tail -f /var/log/syslog
 
 
 Run logger client (send message to log from other container):
